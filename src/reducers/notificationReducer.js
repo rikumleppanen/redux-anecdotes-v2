@@ -12,7 +12,7 @@ const notificationReducer = (store = initialState, action) => {
     }
 }
 
-export const notification = (info) => {
+export const notification = (info, time) => {
     return async (dispatch) => {
         await dispatch({
             type: 'SET_INFO',
@@ -20,7 +20,7 @@ export const notification = (info) => {
         })
         setTimeout(() => dispatch({
             type: 'DEL_INFO'
-        }), 5000)
+        }), time*1000)
     }
 }
 

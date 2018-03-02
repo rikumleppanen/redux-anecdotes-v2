@@ -7,7 +7,7 @@ class AnecdoteList extends React.Component {
 
   clickAVote = (anecdote) => async () => {
     await this.props.addAVote(anecdote)
-    this.props.notification('You liked ´' + anecdote.content + '´')
+    this.props.notification('You liked ´' + anecdote.content + '´', 5)
   }
 
 

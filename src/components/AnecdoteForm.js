@@ -12,7 +12,7 @@ class AnecdoteForm extends React.Component {
     e.target.anecdote.value = ''
     this.props.createAnecdote(dataObj)
 
-    this.props.notification('You added ´' + content + '´')
+    this.props.notification('You added ´' + content + '´', 5)
   }
 
   render() {
