@@ -1,27 +1,26 @@
 const initialState = 'Alkuarvo'
 
-export const setNotification = (info) => {
-    return {
-        type: 'SET_INFO',
-        data: { info }
-    }
-}
-
-export const delNotification = () => {
-    return {
-        type: 'DEL_INFO'
-    }
-}
-
 const notificationReducer = (store = initialState, action) => {
     console.log('ACTION: ', action)
     switch (action.type) {
         case 'SET_INFO':
-            return [action.data.info]
+            return action.info
         case 'DEL_INFO':
             return ""
         default:
             return store
+    }
+}
+
+export const notification = (info) => {
+    return async (dispatch) => {
+        await dispatch({
+            type: 'SET_INFO',
+            info
+        })
+        setTimeout(() => dispatch({
+            type: 'DEL_INFO'
+        }), 5000)
     }
 }
 

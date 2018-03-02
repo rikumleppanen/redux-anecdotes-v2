@@ -5,7 +5,6 @@ import store from './store'
 import { Provider } from 'react-redux'
 
 
-console.log(store.getState())
 
 ///Tämä siirrettiinkin alustettavaksi App.js:ään componentDidMountiin
 //Pusketaan json-serverin kamat redux-pönttöön

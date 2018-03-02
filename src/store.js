@@ -1,4 +1,6 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import {composeWithDevTools} from 'redux-devtools-extension'
 //import anecdoteReducer, {createAnecdote, addAVote} from './reducers/anecdoteReducer'
 import anecdoteReducer from './reducers/anecdoteReducer'
 import notificationReducer from './reducers/notificationReducer'
@@ -11,7 +13,7 @@ const red = combineReducers({
 })
 
 //console.log(red)
-const store = createStore(red)
+const store = createStore(red, composeWithDevTools(applyMiddleware(thunk)))
 
 //store.subscribe(() =>
 //  console.log(store.getState())

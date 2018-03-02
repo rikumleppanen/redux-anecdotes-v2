@@ -19,7 +19,7 @@ class Notification extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-   notifications: state.notifications
+    notifications: state.notifications
   }
 }
 
